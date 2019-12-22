@@ -62,6 +62,7 @@ filepath = r'C:\Users\g\Desktop\骑车行为分析\htmlcode\osmtest8.html'
 graphmap.save(filepath)
 
 import webbrowser as web # 内置包，无需安装
+
 web.open(filepath) #直接用默认浏览器打开
 
 ![image](https://github.com/luansenda/OSM-applications/blob/master/osm_pic.jpg)
