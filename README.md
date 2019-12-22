@@ -1,5 +1,5 @@
 # OSM-applications
-# download map/shp files, data mining applications based on it
+#download map/shp files, data mining applications based on it
 
 import os
 
@@ -57,21 +57,21 @@ def plot_graphto_folium(G, graph_map=None, popup_attribute=None, tiles=None, zoo
         graph_map.fit_bounds(bounds)
         
     return graph_map
-
-rosmid = [data['osmid'] for u, v, key, data in city.edges(keys=True, data=True)] #可以筛选OSMID,完成joincount的匹配
+#可以筛选OSMID,完成joincount的匹配
+rosmid = [data['osmid'] for u, v, key, data in city.edges(keys=True, data=True)] 
 
 colorlist = ['green','blue','orange','yellow','red']
-
-ec2 = [colorlist[e%5] if (type(e)==int) else ' ' for e in rosmid] # 自定义的各道路(osmid)对应属性的颜色list
+#自定义的各道路(osmid)对应属性的颜色list
+ec2 = [colorlist[e%5] if (type(e)==int) else ' ' for e in rosmid] 
 
 graphmap = plot_graphto_folium(city, popup_attribute=None, tiles='Stamen  Terrain', colors = ec2, edge_width=4, edge_opacity=1)
 
 filepath = r'C:\Users\g\Desktop\骑车行为分析\htmlcode\osmtest8.html'
 
 graphmap.save(filepath)
-
-import webbrowser as web # 内置包，无需安装
-
-web.open(filepath) #直接用默认浏览器打开
+#内置包，无需安装
+import webbrowser as web 
+#直接用默认浏览器打开
+web.open(filepath) 
 
 ![image](https://github.com/luansenda/OSM-applications/blob/master/osm_pic.jpg)
