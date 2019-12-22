@@ -32,6 +32,7 @@ ox.plot_graph(city)
 import folium
 
 ## 自定义函数：来自ox.plot_graph_filium（只能指定一种颜色）的更改
+
 def plot_graphto_folium(G, graph_map=None, popup_attribute=None, tiles=None, zoom=1, fit_bounds=True, colors=[], edge_width=2, edge_opacity=1):
 
     gdf_edges = ox.graph_to_gdfs(G, nodes=False, fill_edge_geometry=True)# create gdf of the graph edges    
@@ -42,7 +43,7 @@ def plot_graphto_folium(G, graph_map=None, popup_attribute=None, tiles=None, zoo
     
     if graph_map is None:
     
-        graph_map = folium.Map(location=graph_centroid, zoom_start=zoom, tiles=tiles)
+        graph_map = folium.Map(location=graph_centroid, zoom_start=zoom, tiles=tiles)   
         
     for ind, row in gdf_edges.iterrows():
     
